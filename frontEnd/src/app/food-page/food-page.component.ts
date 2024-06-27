@@ -16,7 +16,7 @@ food!:foodInfo ;
     private router:Router) {
     this.activatedroute.params.subscribe((params)=>{
       if(params.id)
-      foodservice.getFoodById(params.id).subscribe(serverFood => {this.food = serverFood})
+      this.food =foodservice.getFoodById(params.id)
     }
     )    
    }

@@ -8,5 +8,5 @@
         "emitDecoratorMetadata":true,
         "esModuleInterop":true
     },
-    "include" :["src/**/*"],
+    "include" :["src/**/*", "../frontEnd/src/app/data.ts"],
 }

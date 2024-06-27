@@ -1,6 +1,6 @@
 
-import {foodInfo} from '../../frontEnd/src/app/shared/modules/Food';
-import {Tag} from '../../frontEnd/src/app/shared/modules/Tag'
+import {foodInfo} from './shared/modules/Food';
+import {Tag} from './shared/modules/Tag'
 export const sample_food:foodInfo[]= [
     {
         id:0,
@@ -70,7 +70,7 @@ export const sample_food:foodInfo[]= [
         id:5,
         name:'شخشوخة',
         price:450,
-        imgUrl:'/assets/images/food-4.jpg',
+        imgUrl:'/assets/images/food-8.jpg',
         stars:4,
         available:true,
         tags: ['Fast','traditional'],
@@ -88,9 +88,9 @@ export const sample_food:foodInfo[]= [
       },
   ]
   export const sample_tag:Tag[]= [
-    {name:'notAll',count:4},
+    {name:'All',count:7},
     {name:'fast-food',count:3},
-    {name:'traditional',count:1},  
+    {name:'traditional',count:4},  
   ]
   export const sample_users: any[] = [
   {

@@ -45,7 +45,7 @@
     width: 100%;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
-    object-fit: cover;
+    object-fit: contain;
     
     
 }

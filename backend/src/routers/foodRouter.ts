@@ -1,5 +1,5 @@
 import{Router} from 'express'
-import { sample_food, sample_tag } from '../data'
+import { sample_food, sample_tag } from '../../../frontEnd/src/app/data'
 const router = Router()
 router.get('', async( req ,res) => {
     res.send(sample_food)

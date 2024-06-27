@@ -1,6 +1,6 @@
 import express from 'express';
 import cors from 'cors';
-import {sample_tag, sample_food, sample_users} from './data'
+import {sample_tag, sample_food, sample_users} from '../../frontEnd/src/app/data'
 import foodRouter from './routers/foodRouter'
 // import { dbConnect } from './database';
 import { Router } from "express";
