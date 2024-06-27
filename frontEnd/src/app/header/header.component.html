@@ -1,0 +1,30 @@
+  <div class="nav-bar">
+    <div class="logo">
+        <h1 class="title">
+           <span><a routerLink="" ><i class='bx bxs-bowl-hot'></i>Restaurent name </a></span>
+           
+        </h1>
+    </div>
+    <div class="nav-links">
+        <ul>
+            <a routerLink="menu"><li>Menu</li></a>
+            <a routerLink="cart-page"><li>Cart</li></a>
+            <a routerLink="contact"><li>contact us</li></a>
+       
+            
+        </ul>
+     
+    </div>
+    <div class='login-button'>
+        <div class="login-button" >
+            <a routerLink="login-Page" (click)="logout()" *ngIf="User.token" >Login</a>
+        </div>
+    </div>
+        <div  class="logout-container" >
+                    <p class="user-name"(click)='logout()' >{{User.name}}  </p>
+                    <a (click)="logout()" class="logout-button" *ngIf="User.token">logout</a>            
+        </div>
+        
+       
+</div>
+<!-- menu and food -->

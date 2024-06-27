@@ -1,0 +1,26 @@
+div {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size: 1.2rem;
+    flex-direction: column;
+    font-weight: 700;
+    height: 40vh;
+} 
+div a {
+    text-decoration:none;
+    border-radius: 10rem;
+    border:0px solid inherit;
+    background-color: red;
+    color:whitesmoke;
+    padding:.5rem;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:1rem;
+}
+div a:hover {
+    font-size: 1.1rem;
+    padding: .6rem;
+    color: black;
+}

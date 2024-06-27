@@ -1,0 +1,10 @@
+const base_url = 'http://localhost:5000';
+export const foods_url = base_url+'/api/foods';
+export const foods_by_tags_url = base_url +'/api/foods/tag/';
+export const tags_url = base_url +'/api/foods/tags';
+export const foods_search_url = base_url + '/api/foods/search/';
+export const food_by_id_url = foods_url +'/'
+export const login_url = base_url + '/api/users/login'
+export const order_url =base_url + '/api/orders'
+export const create_order_url =base_url + '/api/orders/create'
+export const view_order_url =base_url + '/api/orders/order'

@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="sub-container">
+        <div class="title">
+            <h1>
+                Login page
+            </h1>
+        </div>
+        <form [formGroup]="loginForm" (ngSubmit)="submit()">
+
+            <div class="input-container">
+                <div class="email-div">
+                    <label >Email: &nbsp; &nbsp; &nbsp; &nbsp; </label> 
+                    <input type="email" placeholder="Enter your Email" formControlName="email"/>
+                </div>
+                <div class="password-div">
+                    <label >Password: </label> 
+                    <input [type]="checkBox?'password':'name'" id="password" placeholder="Enter your Pasword" formControlName="password"/>
+                    <input type="checkbox"  (click)="isCheked()">
+                    
+                </div>
+                <div class="login-error" *ngIf="fc.email.errors && isSubmitted">Email or Password Invalid</div>
+                <div class="submit">
+                    <button type="submit" submit>Login</button>
+                </div>
+                
+            </div>
+    
+            </form>
+        
+        
+    </div>
+</div>

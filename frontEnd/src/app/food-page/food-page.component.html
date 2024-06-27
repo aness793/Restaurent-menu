@@ -1,0 +1,25 @@
+<div class="container" *ngIf="food">
+    <img [src]="food.imgUrl" [alt]="food.name">
+    <div class="details">
+    <div class="name">
+        <h1>{{food.name}} </h1><span class="favorite" [class.isFavorite]="food.favorite==true" (click)="food.favorite=!food.favorite"><i class='bx bxs-heart' ></i></span>
+
+    </div>
+      <div class="stars">
+      </div>
+        <p>
+            <app-mor-less text='{{food.description}}'  [wordLimit]="10" >
+
+            </app-mor-less> </p>
+        <p>
+           
+        </p> 
+        <div class="tags">
+      <span class="tags-txt">tags :</span>  <app-tags [foodPageTags]="food.tags"> </app-tags>
+    </div>
+    <h3 class="price-container"><span class="price-txt">Price : </span> <span class="price">{{food.price}} dzd</span> </h3>
+    <button (click)="addToCart()">Add to Cart</button>
+
+    </div>
+   
+</div>

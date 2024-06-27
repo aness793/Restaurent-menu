@@ -1,0 +1,16 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+    background-color:white  ;
+    margin: 0;
+    font-family: poppins;
+}
+
+body { margin: 0; font-family: poppins;
+ }
+*{
+    box-sizing: border-box;
+    font-family: poppins ;
+
+}
+html {    font-family: poppins ;
+}

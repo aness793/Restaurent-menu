@@ -1,0 +1,16 @@
+div {
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+div a {background-color: #f1f1f1;
+    border-radius: 10rem;
+    font-size: 1rem;
+    font-weight: 600;
+    gap: 10px;
+    margin: 2rem 0.6rem 1rem 0.6rem;
+    padding: .3rem 1rem;
+    text-decoration: none;
+    color:red;
+    height: fit-content;
+}

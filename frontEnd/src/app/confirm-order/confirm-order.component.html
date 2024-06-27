@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="content">
+        <h1>Confirm Order</h1>
+        <div class="form-container">
+            <form [formGroup]='checkoutForm'(submit)='createOrder()'>
+                <span>
+                    <label for="name">Name:  
+                    </label>
+                        <input type="name" class="name" id="name"[defaultValue]="fc.name.value ? fc.name.value : Uknown" formControlName="name" />    
+                </span>
+                <span>
+                        <label for="adress">location:
+                        </label>
+                            <input type="adress" id="adress" class="adress" [value]="fc.adress "  formControlName="adress"/>        
+                    </span>
+                <span> <label for="phone">phone:
+            </label>
+                <input type="number" id="phone" class="phone" [value]="fc.phone"   formControlName="phone"/></span>
+
+                <input type="submit"  class="submit" (change)="createOrder()">
+            </form>
+        </div>
+         <order-list style="width: 50svw;" [order]="order"></order-list>
+    </div>
+</div>

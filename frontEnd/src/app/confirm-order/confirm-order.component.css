@@ -1,0 +1,56 @@
+.form-container {
+    width: 100svw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    width: max-content;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+    flex-wrap: nowrap;
+}
+form input {
+    width: 10rem;
+    height: 2rem;
+    border-radius: 2rem;
+    border: 1px solid black;
+    text-align: center;
+    outline-offset:0;
+    outline: none;
+}
+label {
+    width: 5rem;
+    display: flex;
+    flex-wrap: nowrap;
+    font-size: 1.5rem;
+    margin-right:2rem ;
+}
+span  {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+form .submit {
+    width: 7rem;
+    height: 3rem;
+    font-family: poppins;
+    opacity: 0.9;
+    background-color: red;
+    color: whitesmoke;
+    font-weight:500;
+    font-size: 1rem;
+}
+.submit:hover {
+    opacity: 1;
+
+
+}
+.table {
+    width:10svw;
+}
+

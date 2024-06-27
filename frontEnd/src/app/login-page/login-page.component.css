@@ -1,0 +1,58 @@
+.login-error {
+ color: red;   
+ font-weight: 500;
+}
+.container {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 6rem;
+    align-self: center;
+    flex-direction: column;
+    height: 24rem;
+}
+.sub-container {
+    display: flex;
+    flex-direction: column;
+    border: 1.5px solid black;
+    border-radius: 2rem;
+    padding: 2rem 2rem 4rem 1rem;
+}
+.title  {
+    display: flex;
+    
+    justify-content: center;
+}
+.email-div {
+ left: 0;
+}
+.input-container {
+    
+    display: flex;
+    gap: .5rem;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    margin-top: 32px;
+}
+.input-container input {
+    border-radius: 8px;
+    padding: .5rem;
+    border: .2px solid black;
+}
+.title h1 {
+    font-weight: 400;
+}
+.submit {
+    display: flex;
+    justify-content: center;
+}
+.submit button  {
+    border-radius: 8px;
+    background-color: cadetblue;
+    font-weight: 400;
+    text-align: center;
+    padding: .2rem;
+    width: 4rem;
+    margin-top: 1rem;
+    cursor: pointer;
+}

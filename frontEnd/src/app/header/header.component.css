@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+html{
+    height:5rem;
+    outline: none;
+}
+body  {
+    font-family: poppins;
+    font-weight: 400;
+    height: 5rem;
+    
+}
+.nav-bar {
+    /* position: relative; */
+    background-color: hsla(14.17,32.14%,56.08%,1) ;
+    margin: 0; padding: 0;
+    top: 0;
+    left: 0;right: 0;
+    width: 100svw;
+    height: 5rem;
+    display: flex;
+    color: #d3b49f;
+    align-items: center;
+    position: relative;
+}
+.nav-bar ul {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    font-weight: 400;
+    gap: 60px;
+    list-style: none;
+    font-size: 1.2rem;
+    bottom: 0;
+
+    
+}
+ul a {
+    text-decoration: none;
+    color: black;
+    color: #d3b49f;
+
+}
+.nav-links  {
+
+    width: 100svw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 0;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    position: absolute;
+    flex-wrap: nowrap;
+    height: 3rem;
+   
+}
+.title {
+    margin-left: 20px;
+    z-index: 100;
+}
+ul a:hover {
+    color: black;
+}
+h1 a {
+    text-decoration: none;
+    color:inherit;
+    z-index: 1;
+}
+.logo {
+    z-index:100;
+}
+.nav-links a {
+    display: flex;
+    flex-wrap: nowrap;
+    height: 2ch;
+}
+.login-button {
+    display:flex;
+    justify-content: flex-end;
+    align-items:center;
+}
+
+.login-button a {
+    text-decoration: none;
+    color: inherit;
+    position: absolute;
+    right: 3rem;
+    height: 5rem;
+    margin-top: 0;
+    display:flex;
+    align-items: center;
+    padding: 4px;
+
+}
+.login-button {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+}
+.logout-container{
+    position: absolute;
+    height:5rem;
+    display:flex;
+    align-items:center;
+    right: 3rem;
+    font-size: 1.5rem;
+
+}
+.user-name {
+position: absolute;
+}
+.logout-container .logout-button {
+    color: transparent;
+    z-index: 2000;
+}
+.logout-container .logout-button:hover {
+    color:black;
+}

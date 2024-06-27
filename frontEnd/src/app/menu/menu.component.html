@@ -1,0 +1,22 @@
+
+<app-search></app-search>
+<app-tags></app-tags>
+<div class="container" *ngIf="Foods.length > 0" >
+    <div class="cards-container" *ngFor="let ele of Foods">
+        <div class="img-container">
+            <img [src]="ele.imgUrl" alt="No Content">
+        </div>
+        <div class="description">
+            <h1 > {{ele.name}}<span class="favorite" [class.isFavorite]="ele.favorite==true" (click)="ele.favorite=!ele.favorite"><i class='bx bxs-heart' ></i></span></h1>
+            <h3> {{ele.price}} <span class="dzd">dzd</span></h3>
+        </div>
+        <div class="addToCart" ><button> <a routerLink="/food/{{ele.id}}">Add To Cart</a></button></div>
+    </div>
+   
+</div>
+<app-not-found  [visible]="Foods.length <= 0" 
+        notFoundMessage="Search Not Found"
+        resetLinkText="go back to menu"
+    >
+
+</app-not-found>

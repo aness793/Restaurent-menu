@@ -1,0 +1,38 @@
+
+div {
+    margin: 0;
+    padding: 0;
+    display:flex;
+    justify-content:center;
+    margin: 16px 0 0 0 ;
+}
+div input {
+    border-radius:10rem 0 0 10rem ;
+    border: none;
+    height:3rem;
+    width: 20rem;
+    padding: 1.2rem;
+    font-size:1rem;
+    font-weight: 500;
+    display: flex;
+    text-align: center;
+    background-color: #f1f1f1;
+    border: none;
+}
+*{
+    text-transform: capitalize;
+}
+div button {
+    width: 5rem;
+    height: 3rem;
+    margin: 0;
+    border-radius: 0 10rem 10rem 0;
+    border: 0;
+    background-color: hsla(14.17,32.14%,56.08%,1);
+    color: whitesmoke;
+    cursor: pointer;
+    opacity: 0.8;
+}
+div button:hover {
+    opacity:1;
+}

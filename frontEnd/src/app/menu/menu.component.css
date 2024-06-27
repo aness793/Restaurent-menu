@@ -1,0 +1,130 @@
+
+* {
+    font-family: poppins ;
+}
+.cards-container {
+    position: relative;
+    width: 27svw;
+    height:46svh;
+    display: flex ;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 0 70px 0;
+    padding: 0;
+    z-index: 100;
+    background-color: whitesmoke;
+    border-radius: 20px;
+    
+    
+}
+.container  {
+    overflow-x: scroll;
+    top: 0;
+    margin:7rem 0 20px 0;
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: fit-content;
+    overflow-y: auto;
+
+
+
+
+}
+.cards-container img {
+    margin: 0 0 0 0;
+    padding: 0;
+    position: relative;
+    z-index: 100;
+    display: flex;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    object-fit: cover;
+    
+    
+}
+.img-container {
+    position:absolute;
+    top: 0;
+    z-index: 1;
+    margin: 0;padding: 0;
+    width: 27svw;
+    height: 23svh;
+    border-top-left-radius: 20px;
+}
+.description {
+    position: relative;
+    margin: 23svh 0 0 0 ;
+    height: fit-content;
+    z-index: 100;
+    padding: 0  ; 
+}
+.addToCart {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: fit-content;
+    margin: 0 0 0 0;
+}
+.description h1 {
+    margin: 0 0 4px 8px ;
+    
+    font-size: 1.2rem;
+}
+.description h3 {
+    margin: 0 0 4px 0 ;
+    font-weight: 600;
+    margin-left: 8px;
+    font-size: 1rem;
+}
+.description p {
+    margin: 0 0 4px 0 ;
+    font-size: 0.9rem;
+    margin-left: 6px;
+}
+.dzd {
+    color: red;
+}
+.long {
+    min-height:46svh;
+    height: fit-content;
+}
+.favorite {
+    position:absolute;
+    margin:4px 8px 0 0 ; right:0;
+    right:0;
+    font-size: 2.5rem;
+    color:grey;
+    cursor: pointer;
+}
+.isFavorite {
+    color: red;
+}
+*{
+    text-transform: capitalize;
+}
+.addToCart button{
+    border-radius:10rem;
+    color:whitesmoke;
+    background-color:red;
+    opacity: 0.9;
+    z-index: 101;
+    font-size: 1.1rem;
+    font-weight: 400;
+      border:none;
+}
+.addToCart{
+    z-index: 100;
+}
+.addToCart a {
+    text-decoration: none;
+    color: inherit;
+}
