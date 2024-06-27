@@ -18,7 +18,7 @@ app.use(express.json())
 dbConnect()
 app.use(cors({
     credentials:true,
-    origin:['http://localhost:4200'],
+    origin:['https://aness793.github.io/Restaurent-menu'],
 }))
 app.get('/api/foods/seed', asyncHandler(async (req ,res)=>{
     const foodCount = await foodModel.countDocuments()
