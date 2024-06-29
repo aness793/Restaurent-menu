@@ -20,11 +20,12 @@ html {
     max-width: 40rem;
 }
 img {
-    border-radius: 3rem;
     flex:1 0;
     object-fit: cover;
     height:25rem;
-    margin: 1rem;
+    margin: 0 1rem 1rem  1rem;
+    border-radius: 3rem;
+    outline-offset: 0;
 }
 .details {
     width:100%;
@@ -96,4 +97,63 @@ img {
 }
 .details button:hover {
 opacity: 1;
+}
+@media screen and (max-width:500px) {
+    .container {
+        margin-inline: 0;
+        margin-left: .2rem;
+    }
+    img {
+        width: 4rem;
+        height: auto;
+        min-width: 1rem;
+        margin: 0 .2rem 0  0;
+        border-radius: 3rem;
+        object-fit: contain;
+    }
+    h1 {
+        font-size: 1.4rem;
+    }
+    app-mor-less {
+        font-size: .8rem;
+    }
+}
+@media screen and (max-width:370px) {
+    img {
+        width: 7rem;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+   .details {
+    padding-left: 2rem;
+   }
+   .details button {
+    width: 15rem;
+   }
+   .tags-txt {
+    padding: .3rem 1rem .3rem 0;
+    margin: 2rem 0.2rem 1rem 0.1rem;
+    color:grey;
+    font-weight: 400;
+}
+}
+@media screen and (max-width:320px) {
+    .details h1 {
+        padding-left:2.5rem;
+    }
+    app-mor-less  {
+        padding-left:2.5rem;
+    }
+    .tags  {
+        padding-left:2.5rem;
+    }
+    .details h3 {
+        padding-left:2.5rem;
+    }
+    .details button {
+        padding-left: 2rem;
+    }
+   
+  
+    
 }
