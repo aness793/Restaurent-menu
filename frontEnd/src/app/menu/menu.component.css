@@ -20,7 +20,7 @@
 .container  {
     overflow-x: scroll;
     top: 0;
-    margin:7rem 0 20px 0;
+    margin:4rem 0 20px 0;
     width: auto;
     display: flex;
     flex-direction: row;
@@ -127,4 +127,33 @@
 .addToCart a {
     text-decoration: none;
     color: inherit;
+}
+@media screen and (max-width:640px) {
+    .cards-container {
+        position: relative;
+        width: 15rem;
+        display: flex ;
+        flex-direction: column;
+        justify-content: center;
+        margin: 0 0 70px 0;
+        padding: 0;
+        z-index: 100;
+        background-color: rgb(230, 227, 227);
+        border-radius: 20px;
+        
+        
+    }   
+    .img-container {
+        justify-content: center;
+        width: 15rem;
+    }
+}
+@media screen and (max-width:270px) {
+    .container {
+        width: 100svw;
+        margin-left: 1rem;
+    }
+    .img-container {
+        width: 100%;
+    }
 }

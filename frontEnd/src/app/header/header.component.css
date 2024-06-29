@@ -116,3 +116,139 @@ position: absolute;
 .logout-container .logout-button:hover {
     color:black;
 }
+@media screen and (max-width:980px) {
+    
+    .nav-bar {
+        position: relative;
+        background-color: hsla(14.17,32.14%,56.08%,1) ;
+        margin: 0; padding: 0;
+        top: 0;
+        left: 0;right: 0;
+        width: 100svw;
+        height: 5rem;
+        display: flex;
+        color: #d3b49f;
+        align-items: center;
+        position: relative;
+    }
+    .nav-bar ul {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        font-weight: 400;
+        gap:2rem;
+        list-style: none;
+        font-size: 1.2rem;
+        bottom: 0;
+    
+        
+    }
+    .nav-links  {
+    
+        width: 100svw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        bottom: 0;
+        margin-bottom: 0;
+        padding-bottom: 0;
+        position: absolute;
+        flex-wrap: nowrap;
+        height: 3rem;
+       
+    }
+    .title {
+        margin: 0;
+        margin-left: 1rem;
+        z-index: 100;
+        top: 0;
+    }
+    ul a:hover {
+        color: black;
+    }
+    h1 a {
+        text-decoration: none;
+        color:inherit;
+        z-index: 1;
+        margin-top: 2px;
+    }
+    .logo {
+        z-index:100;
+        align-self: flex-start;
+        font-size: 1rem;
+    }
+    .nav-links a {
+        display: flex;
+        flex-wrap: nowrap;
+        height: 2ch;
+    }
+}
+@media screen and (max-width:400px) {
+    .nav-bar {
+        background-color: hsla(14.17,32.14%,56.08%,1) ;
+        margin: 0; padding: 0;
+        top: 0;
+        left: 0;right: 0;
+        width: 100svw;
+        height: 5rem;
+        display: flex;
+        color: #d3b49f;
+        align-items: center;
+        position: relative;
+    }
+    .nav-bar ul {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        font-weight: 400;
+        gap:.8rem;
+        list-style: none;
+        font-size: 1rem;
+        bottom: 0;
+        margin-bottom: .5rem;
+        padding-left: 0;
+
+    
+        
+    }
+    .nav-links  {
+    
+        width: 100svw;
+        display: flex;
+        justify-content: center;
+        align-items: end;
+        bottom: 0;
+        margin-bottom: 0;
+        padding-bottom: 0;
+        position: absolute;
+        flex-wrap: nowrap;
+        height: 3rem;
+        font-size: .6rem;
+    }
+    .title {
+        margin: 0;
+        margin-left: .5rem;
+        z-index: 100;
+        top: 0;
+    }
+    ul a:hover {
+        color: black;
+    }
+    h1 a {
+        text-decoration: none;
+        color:inherit;
+        z-index: 1;
+        margin-top: 2px;
+    }
+    .logo {
+        z-index:100;
+        align-self: flex-start;
+        font-size:.8rem;
+
+    }
+    .nav-links a {
+        display: flex;
+        flex-wrap: nowrap;
+        height: 2ch;
+    }
+}

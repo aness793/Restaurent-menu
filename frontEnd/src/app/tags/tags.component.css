@@ -2,15 +2,25 @@ div {
     display:flex;
     flex-wrap:wrap;
     justify-content:center;
+    gap: 1rem;
 }
 div a {background-color: #f1f1f1;
     border-radius: 10rem;
     font-size: 1rem;
     font-weight: 600;
-    gap: 10px;
-    margin: 2rem 0.6rem 1rem 0.6rem;
+    margin: 2rem 0 .4rem 0.1rem;
     padding: .3rem 1rem;
     text-decoration: none;
     color:red;
     height: fit-content;
+}
+@media screen and (max-width:346px) {
+    div {
+        font-size: .8rem;
+        gap: .4rem;
+    }
+    div a:nth-child(3){
+        margin-top: .4rem;
+    }
+    
 }

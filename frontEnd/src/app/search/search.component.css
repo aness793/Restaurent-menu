@@ -36,3 +36,17 @@ div button {
 div button:hover {
     opacity:1;
 }
+@media screen and (max-width:300px) {
+    div input {
+        height:2rem;
+        width: 18rem;
+        min-width: 9rem ;
+    }
+    div button {
+        height: 38.38px;
+        width: 3rem;
+        font-size: .6rem;
+
+    }
+    
+}
