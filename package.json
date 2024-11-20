@@ -1,0 +1,13 @@
+{
+    "name":"restaurant-website",
+    "version": "1.0.0",
+    "engines": {
+        "node": ">=18"
+    },
+    "scripts": {
+        "start": "cd backend && node server.ts",
+        "prebuild":"cd backend && npm run build",
+        "build":"cd frontend && ng build"
+    }
+
+}
