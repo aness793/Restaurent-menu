@@ -1,6 +1,6 @@
 import {connect} from 'mongoose'
 export const dbConnect = ()=>{
-    connect('mongodb+srv://aness:k61dYe41cYgE7wuW@cluster0.5ibxkfe.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0')
+    connect(process.env.DATA_URI!)
     try{
         console.log('connected seccussfully  ')
     }catch (error) {
