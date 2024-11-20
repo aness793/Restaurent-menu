@@ -12,13 +12,16 @@ import { Observable, observable } from 'rxjs';
 })
 export class FoodPageComponent implements OnInit {
 food!:foodInfo ;
-  constructor(private activatedroute:ActivatedRoute, private foodservice:FoodService , private cartService:CartService,
-    private router:Router) {
+constructor(private activatedroute:ActivatedRoute, private foodservice:FoodService , private cartService:CartService,
+  private router:Router) {
+      let foodObservable : Observable<foodInfo>
     this.activatedroute.params.subscribe((params)=>{
       if(params.id)
-      this.food =foodservice.getFoodById(params.id)
-    }
+       foodservice.getFoodById(params.id).subscribe((food)=>{
+      this.food = food})
+      }
     )    
+    
    }
 
   ngOnInit(): void {

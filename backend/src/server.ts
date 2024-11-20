@@ -1,38 +1,36 @@
 import express from 'express';
 import cors from 'cors';
 import {sample_tag, sample_food, sample_users} from '../../frontEnd/src/app/data'
-import foodRouter from './routers/foodRouter'
-// import { dbConnect } from './database';
-import { Router } from "express";
 import jwt from 'jsonwebtoken'
-import mongoose from 'mongoose';
 import asyncHandler from 'express-async-handler'
 import { foodModel } from './models/food';
 import { userModel } from './models/users';
 import {user} from '../../frontEnd/src/app/shared/modules/user'
 import * as bcrypt from 'bcryptjs'
 import { orderModel } from './models/order.model';
-import { OrderStatus } from './order_status';
+
+import { db } from './configs/add_db';
+import dotenv from 'dotenv'
+import { dbConnect } from './database';
+dotenv.config()
+dbConnect()
 const app =express();
 app.use(express.json())
-// dbConnect()
 app.use(cors({
     credentials:true,
     origin:['http://localhost:4200'],
 }))
+
 // everything you see that is commented in this file is related to a databse and i since i can't use a date base in github i'm using a local file contains the date
-
-
-
-// app.get('/api/foods/seed', asyncHandler(async (req ,res)=>{
-//     const foodCount = await foodModel.countDocuments()
-//     if(foodCount>0){
-//         res.send('seed already done')
-//         return;
-//     }
-//     await foodModel.create(sample_food)
-//     res.send('seed is done')
-// }) )
+app.get('/api/foods/seed', asyncHandler(async (req ,res)=>{
+    const foodCount = await foodModel.countDocuments()
+    if(foodCount>0){
+        res.send('seed already done')
+        return;
+    }
+    await foodModel.create(sample_food)
+    res.send('seed is done')
+}) )
 // app.get('/api/users/seed', asyncHandler(async (req, res)=>{
 //     const userCount = await userModel.countDocuments()
 //     if(userCount>0){
@@ -42,104 +40,104 @@ app.use(cors({
 //     await userModel.create(sample_users)
 //     res.send('seed is done')
 // }) )
-// app.get('', asyncHandler
-// (async( req ,res) => {
-//     const allFoods = await foodModel.find()
-//     res.send(allFoods)
-// }))
 app.get('', asyncHandler
 (async( req ,res) => {
-    const allFoods =sample_food
+    const allFoods = await foodModel.find()
     res.send(allFoods)
 }))
-// app.get('/api/foods', asyncHandler(
-//     async (req, res)=>{
-//         const allFoods = await foodModel.find()
-//         res.send(allFoods)
-//     }
-// ))
+// app.get('', asyncHandler
+// (async( req ,res) => {
+//     const allFoods =sample_food
+//     res.send(allFoods)
+// }))
 app.get('/api/foods', asyncHandler(
     async (req, res)=>{
-        const allFoods = sample_food
+        const allFoods = await foodModel.find()
         res.send(allFoods)
     }
 ))
-// app.get('/api/foods/tags',asyncHandler(
-//     async (req ,res)=>{
-//         const tags = await foodModel.aggregate([
-//             {
-//                 $unwind:'$tags'
-//             },
-//             {
-//                 $group:{
-//                     _id:'$tags',
-//                     count:{$sum: 1}
-//                 }
-//             },
-//             {
-//                 $project:{
-//                     _id:0,
-//                     name:'$_id',
-//                     count:'$count'
-//                 }
-//             }
-//         ]).sort({count:-1})
-//         const all = {
-//             name:'All',
-//             count: await foodModel.countDocuments()
-//         }
-//         tags.unshift(all)
-//         res.send(tags)
+// app.get('/api/foods', asyncHandler(
+//     async (req, res)=>{
+//         const allFoods = sample_food
+//         res.send(allFoods)
 //     }
 // ))
 app.get('/api/foods/tags',asyncHandler(
     async (req ,res)=>{
-        const tags = sample_tag
+        const tags = await foodModel.aggregate([
+            {
+                $unwind:'$tags'
+            },
+            {
+                $group:{
+                    _id:'$tags',
+                    count:{$sum: 1}
+                }
+            },
+            {
+                $project:{
+                    _id:0,
+                    name:'$_id',
+                    count:'$count'
+                }
+            }
+        ]).sort({count:-1})
+        const all = {
+            name:'All',
+            count: await foodModel.countDocuments()
+        }
+        tags.unshift(all)
         res.send(tags)
     }
-    ))
-
-// app.get('/api/foods/tag/:tag', asyncHandler(
+))
+// app.get('/api/foods/tags',asyncHandler(
 //     async (req ,res)=>{
-//         const food = await foodModel.find({tags: req.params.tag})
-//         res.send(food)
+//         const tags = sample_tag
+//         res.send(tags)
 //     }
-// ))
+//     ))
+
 app.get('/api/foods/tag/:tag', asyncHandler(
-        async (req ,res)=>{
-            const foodbytag =sample_food.filter(food => food.tags?.includes(req.params.tag))
-            console.log(foodbytag)
-            res.send(foodbytag)
-        }))
+    async (req ,res)=>{
+        const food = await foodModel.find({tags: req.params.tag})
+        res.send(food)
+    }
+))
+// app.get('/api/foods/tag/:tag', asyncHandler(
+//         async (req ,res)=>{
+//             const foodbytag =sample_food.filter(food => food.tags?.includes(req.params.tag))
+//             console.log(foodbytag)
+//             res.send(foodbytag)
+//         }))
         
-// app.get('/api/foods/:id' , asyncHandler(
-//     async (req, res)=>{
-//         const id = await foodModel.findById(req.params.id) ;
-//         res.send(id)
-//     }
-// ))
 app.get('/api/foods/:id' , asyncHandler(
     async (req, res)=>{
-        const id =sample_food.find(food=>food.id == parseInt(req.params.id)) ;
+        const id = await foodModel.findById(req.params.id) ;
         res.send(id)
     }
 ))
-// app.get('/api/foods/search/:searchTerm', asyncHandler(
-//     async (req,res) => {
-//         const searchRegEx = new RegExp(req.params.searchTerm ,'i')
-//         const searchWord = await foodModel.find({name:{$regex:searchRegEx}})
-//         res.send(searchWord)
+// app.get('/api/foods/:id' , asyncHandler(
+//     async (req, res)=>{
+//         const id =sample_food.find(food=>food.id == parseInt(req.params.id)) ;
+//         res.send(id)
 //     }
 // ))
 app.get('/api/foods/search/:searchTerm', asyncHandler(
     async (req,res) => {
-        const searchTerm = req.params.searchTerm
-        const searchWord = sample_food.filter(food => food.name.toLowerCase().includes(searchTerm.toLowerCase()))
-      
-        console.log(searchWord)
+        const searchRegEx = new RegExp(req.params.searchTerm ,'i')
+        const searchWord = await foodModel.find({name:{$regex:searchRegEx}})
         res.send(searchWord)
     }
 ))
+// app.get('/api/foods/search/:searchTerm', asyncHandler(
+//     async (req,res) => {
+//         const searchTerm = req.params.searchTerm
+//         const searchWord = sample_food.filter(food => food.name.toLowerCase().includes(searchTerm.toLowerCase()))
+      
+//         console.log(searchWord)
+//         res.send(searchWord)
+//     }
+// ))
 app.get('/api/users', async (req, res)=>{
     const usrs = sample_users
     res.send(usrs)

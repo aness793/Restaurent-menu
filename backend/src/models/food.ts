@@ -32,4 +32,4 @@ export const foodSchema = new Schema<Food>(
         
     }
 )
-export const foodModel =model<Food>('food',foodSchema);
+export const foodModel =model<Food>('food-List',foodSchema);

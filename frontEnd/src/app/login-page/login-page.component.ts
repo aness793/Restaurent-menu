@@ -18,8 +18,6 @@ returnUrl='';
   constructor(private formBuilder:FormBuilder ,  private userservice:UsersService, private activatedroute:ActivatedRoute, private router:Router) {
     
 
-  
-
    }
 
   ngOnInit(): void {

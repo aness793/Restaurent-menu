@@ -16,32 +16,32 @@ toolong = true ;
 Foods:foodInfo[]=[]
   constructor( private activatedroute:ActivatedRoute, private foodservice:FoodService , private cartservice:CartService, private route:ActivatedRoute,private router:Router) 
   {
-    // let foodsObservable:Observable<foodInfo[]>; 
-    //  this.activatedroute.params.subscribe(params=>{
-    //   if(params.searchTerm)
-    //     {foodsObservable = this.foodservice.getAllFoodsBySearchTerm(params.searchTerm)}
-    //   else if (params.tag)
-    //     {foodsObservable = this.foodservice.getAllFoodsByTag(params.tag)}
-    //   else 
-    //    foodsObservable =foodservice.getAll();
-    // foodsObservable.subscribe((serverFoods) => {
-    //   this.Foods = serverFoods 
-    // })
-    // }
+    let foodsObservable:Observable<foodInfo[]>; 
+     this.activatedroute.params.subscribe(params=>{
+      if(params.searchTerm)
+        {foodsObservable = this.foodservice.getAllFoodsBySearchTerm(params.searchTerm)}
+      else if (params.tag)
+        {foodsObservable = this.foodservice.getAllFoodsByTag(params.tag)}
+      else 
+       foodsObservable =foodservice.getAll();
+    foodsObservable.subscribe((serverFoods) => {
+      this.Foods = serverFoods 
+    })
+    })
   
-  this.activatedroute.params.subscribe(
-    (params)=>{
-      if(params.searchTerm){
-        this.Foods = this.foodservice.getAllFoodsBySearchTerm(params.searchTerm)
-      }
-      else if(params.tag){
-        this.Foods = this.foodservice.getAllFoodsByTag(params.tag)
-      }
-      else {
-        this.Foods = this.foodservice.getAll()
-      }
-    }
-  )
+  // this.activatedroute.params.subscribe(
+  //   (params)=>{
+  //     if(params.searchTerm){
+  //       this.Foods = this.foodservice.getAllFoodsBySearchTerm(params.searchTerm)
+  //     }
+  //     else if(params.tag){
+  //       this.Foods = this.foodservice.getAllFoodsByTag(params.tag)
+  //     }
+  //     else {
+  //       this.Foods = this.foodservice.getAll()
+  //     }
+  //   }
+  // )
   }
   ngOnInit(): void {
     

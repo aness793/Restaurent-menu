@@ -13,31 +13,31 @@ export class FoodService {
   constructor( private http:HttpClient) { }
   
   getAll(){
-    // return this.http.get<foodInfo[]>(foods_url)
-    return sample_food
+    return this.http.get<foodInfo[]>(foods_url)
+    // return sample_food
     
     
   }
-  getFoodById(id:number):foodInfo{
-    // return this.http.get<foodInfo>(food_by_id_url+id)
-    return sample_food.find(food=>food.id == id ) ?? new foodInfo();
+  getFoodById(id:number):Observable<foodInfo>{
+    return this.http.get<foodInfo>(food_by_id_url+id)
+    // return sample_food.find(food=>food.id == id ) ?? new foodInfo();
   }
-  getAllTags():Tag[]{
-    // return  this.http.get<Tag[]>(tags_url)
-    return sample_tag
+  getAllTags():Observable<Tag[]>{
+    return  this.http.get<Tag[]>(tags_url)
+    // return sample_tag
 
   };
-  getAllFoodsByTag(tag:string):foodInfo[]{
+  getAllFoodsByTag(tag:string):Observable<foodInfo[]>{
       if(tag =='All')
         return this.getAll() ;
       else
-    //  return this.http.get<foodInfo[]>(foods_by_tags_url + tag)
-    return sample_food.filter(food => food.tags!.includes(tag))
+     return this.http.get<foodInfo[]>(foods_by_tags_url + tag)
+    // return sample_food.filter(food => food.tags!.includes(tag))
 };
   
-  getAllFoodsBySearchTerm(searchTerm:string):foodInfo[]{
-      // return this.http.get<foodInfo[]>(foods_search_url + searchTerm);
-      return sample_food.filter(food => food.name.toLowerCase().includes(searchTerm.toLowerCase()))
+  getAllFoodsBySearchTerm(searchTerm:string):Observable<foodInfo[]>{
+      return this.http.get<foodInfo[]>(foods_search_url + searchTerm);
+      // return sample_food.filter(food => food.name.toLowerCase().includes(searchTerm.toLowerCase()))
 };
 }
 
